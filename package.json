@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "DevBlog",
   "main": "server.js",
+  "engines": {"node": "v16.17.0"},
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "node server.js",
     "server": "nodemon server.js"
   },
   "author": "",
