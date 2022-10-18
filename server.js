@@ -33,6 +33,10 @@ app.use("/api/email", emailMsgRoute);
 //category route
 app.use("/api/category",categoryRoute)
 
+app.get("/",(req, res) => {
+    res.send("devblog backend connected")
+})
+
 //error handler
 app.use(notFound)
 app.use(errorHandler)
