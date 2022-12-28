@@ -14,12 +14,19 @@ const categoryRoute = require('./route/category/categoryRoute');
 const PORT=process.env.PORT || 4000;
 app.listen(PORT,console.log(`server is running on port  ${PORT}`));
 //cors
-const corsOptions = {
-  origin: "https://devblogapp.netlify.app",
-  credentials: true, //access-control-allow-credentials:true
-  optionSuccessStatus: 200,
-};
-app.use(cors(corsOptions));
+// const corsOptions = {
+//   origin: "https://devblogapp.netlify.app",
+//   credentials: true, //access-control-allow-credentials:true
+//   optionSuccessStatus: 200,
+// };
+// app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: ["https://devblogapp.netlify.app", "http://localhost:3000"],
+    method: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 //middleware
 app.use(express.json())
 
